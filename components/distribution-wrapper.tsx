@@ -7,7 +7,7 @@ import { BarChart } from "@/components/bar-chart";
 export const DistributionWrapper = ({ users }: { users: User[] }) => {
 	const { data: session } = useSession();
 	// @ts-ignore
-	const score = session?.user.score || 0;
+	const score = session?.score || 0;
 
 	return (
 		<main>
