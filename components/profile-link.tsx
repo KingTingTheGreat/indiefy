@@ -6,7 +6,7 @@ import { useSession } from "next-auth/react";
 function ProfileLink() {
 	const { data: session } = useSession();
 	// @ts-ignore
-	const score = session?.user.score || 0;
+	const score = session?.score || 0;
 	const unused = 100 - score;
 	const graphData = [
 		{ title: "Score", value: score, color: "#78cb5f" },
