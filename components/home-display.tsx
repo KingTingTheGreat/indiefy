@@ -41,7 +41,6 @@ export const HomeDisplay = () => {
 
 	return (
 		<main className="flex flex-col min-h-screen w-[80%] flex-wrap items-center justify-between p-24">
-			<p>username: {username}</p>
 			{songs && songs.length > 0 ? <TopSongs songs={songs} /> : <LoginButton />}
 		</main>
 	);
