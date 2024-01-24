@@ -4,7 +4,7 @@ import { signIn } from "next-auth/react";
 export const LoginButton = () => {
 	const handleLogin = () => {
 		console.log("login button clicked");
-		signIn("spotify", { callbackUrl: "https://indie-score.vercel.app" });
+		signIn("spotify", { callbackUrl: "https://indiefy.org" });
 	};
 
 	return (
