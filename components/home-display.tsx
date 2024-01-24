@@ -13,7 +13,6 @@ export const HomeDisplay = () => {
 	const [userScore, setUserScore] = useState<number>(session?.user.score ?? 0);
 	const [username, setUsername] = useState<string>("");
 
-	useEffect(() => {
 		const fetchSongs = async () => {
 			// @ts-ignore
 			const token = await session?.user.accessToken;
@@ -42,7 +41,7 @@ export const HomeDisplay = () => {
 	return (
 		<main className="flex flex-col min-h-screen w-[80%] flex-wrap items-center justify-between p-24">
 			<p>username: {username}</p>
-			{songs.length > 0 ? <TopSongs songs={songs} /> : <LoginButton />}
+			{songs && songs.length > 0 ? <TopSongs songs={songs} /> : <LoginButton />}
 		</main>
 	);
 };
