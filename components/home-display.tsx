@@ -13,6 +13,7 @@ export const HomeDisplay = () => {
 	const [userScore, setUserScore] = useState<number>(session?.user.score ?? 0);
 	const [username, setUsername] = useState<string>("");
 
+	useEffect(() => {
 		const fetchSongs = async () => {
 			// @ts-ignore
 			const token = await session?.user.accessToken;
