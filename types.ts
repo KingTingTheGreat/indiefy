@@ -1,5 +1,10 @@
 import { DefaultSession } from "next-auth";
 
+export type DBUser = {
+	username: string;
+	score: string;
+};
+
 export type User = {
 	name?: string | null;
 	email?: string | null;

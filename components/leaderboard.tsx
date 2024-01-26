@@ -47,8 +47,8 @@ export const Leaderboard = ({ users }: { users: User[] }) => {
 						<LeaderboardRow
 							key={i}
 							rank={i + 1}
-							username={user.username ? user.username : "[USERNAME NOT FOUND]"}
-							score={user.score !== undefined ? user.score : 50}
+							username={user.username ?? "[USERNAME NOT FOUND]"}
+							score={user.score ?? 50}
 						/>
 					))}
 				</tbody>
