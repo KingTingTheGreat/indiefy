@@ -1,4 +1,4 @@
-import { Song, Artist } from "@/types";
+import { Song, Artist, Album } from "@/types";
 import Link from "next/link";
 
 const ArtistDiv = ({ artists }: { artists: Artist[] }) => {
@@ -14,9 +14,18 @@ const ArtistDiv = ({ artists }: { artists: Artist[] }) => {
 	);
 };
 
+const albumCover = ({ album }: { album: Album }) => {
+	return (
+		<div className="flex flex-col items-center justify-center">
+			<img src={album.images[0].url} alt="album cover" />
+		</div>
+	);
+};
+
 const SongIcon = ({ song }: { song: Song }) => {
 	return (
-		<div className="flex flex-col flex-wrap max-w-30 items-center justify-center">
+		<div className="flex flex-col flex-wrap max-w-60 items-center justify-center">
+			{albumCover({ album: song.album })}
 			<p>Title: {song.name}</p>
 			<ArtistDiv artists={song.artists} />
 			<p>popularity: {song.popularity}</p>
