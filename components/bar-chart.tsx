@@ -29,7 +29,7 @@ const BarChart = ({ score, users }: { score: number; users: User[] }) => {
 				bar: { groupWidth: "100%" },
 				legend: { position: "none" },
 				chartArea: { width: "80%", height: "80%" },
-				backgroundColor: "#444777",
+				backgroundColor: "#444",
 				vAxis: {
 					// title: "Number of Users",
 					gridlines: {
