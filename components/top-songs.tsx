@@ -6,9 +6,11 @@ const TopSongs = ({ songs }: { songs: Song[] }) => {
 	return (
 		<>
 			<ScoreBar />
-			{songs.map((song) => (
-				<SongIcon key={song.id} song={song} />
-			))}
+			<div className="w-full flex flex-wrap justify-center">
+				{songs.map((song) => (
+					<SongIcon key={song.id} song={song} />
+				))}
+			</div>
 		</>
 	);
 };
