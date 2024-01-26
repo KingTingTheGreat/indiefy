@@ -1,7 +1,7 @@
 "use client";
 import { useSession } from "next-auth/react";
 
-export const ScoreBar = () => {
+const ScoreBar = () => {
 	const { data: session } = useSession();
 	// @ts-ignore
 	const score = session?.score || 0;
@@ -13,3 +13,5 @@ export const ScoreBar = () => {
 		</div>
 	);
 };
+
+export default ScoreBar;

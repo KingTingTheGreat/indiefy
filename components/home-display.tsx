@@ -1,12 +1,12 @@
 "use client";
 import { useEffect, useState } from "react";
-import { TopSongs } from "./top-songs";
-import { LoginButton } from "./login-button";
+import TopSongs from "./top-songs";
+import LoginButton from "./login-button";
 import { useSession } from "next-auth/react";
 import { Song } from "@/types";
-import { calculateScore } from "@/utils/calculate-score";
+import calculateScore from "@/utils/calculate-score";
 
-export const HomeDisplay = () => {
+const HomeDisplay = () => {
 	const [songs, setSongs] = useState<Song[]>([]);
 	const { data: session, update } = useSession();
 	// @ts-ignore
@@ -45,3 +45,5 @@ export const HomeDisplay = () => {
 		</main>
 	);
 };
+
+export default HomeDisplay;

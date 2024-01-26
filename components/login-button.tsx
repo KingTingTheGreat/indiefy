@@ -1,7 +1,7 @@
 "use client";
 import { signIn } from "next-auth/react";
 
-export const LoginButton = () => {
+const LoginButton = () => {
 	const handleLogin = () => {
 		console.log("login button clicked");
 		signIn("spotify", { callbackUrl: "https://indiefy.org" });
@@ -13,3 +13,5 @@ export const LoginButton = () => {
 		</button>
 	);
 };
+
+export default LoginButton;

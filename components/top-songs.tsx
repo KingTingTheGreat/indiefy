@@ -1,8 +1,8 @@
 import { Song } from "@/types";
-import { ScoreBar } from "./score-bar";
-import { SongIcon } from "./song-icon";
+import ScoreBar from "./score-bar";
+import SongIcon from "./song-icon";
 
-export const TopSongs = ({ songs }: { songs: Song[] }) => {
+const TopSongs = ({ songs }: { songs: Song[] }) => {
 	return (
 		<>
 			<ScoreBar />
@@ -12,3 +12,5 @@ export const TopSongs = ({ songs }: { songs: Song[] }) => {
 		</>
 	);
 };
+
+export default TopSongs;

@@ -5,7 +5,7 @@ import { User, DataArray } from "@/types";
 const maxScore = 100;
 const title = ["Score", "Number of Users", { role: "style" }];
 
-export const BarChart = ({ score, users }: { score: number; users: User[] }) => {
+const BarChart = ({ score, users }: { score: number; users: User[] }) => {
 	let data: DataArray[] = [];
 	for (let i = 0; i <= maxScore; i++) {
 		if (i === score) data.push([i, 0, "#FF0000"]);
@@ -49,3 +49,5 @@ export const BarChart = ({ score, users }: { score: number; users: User[] }) => 
 		/>
 	);
 };
+
+export default BarChart;

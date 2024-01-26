@@ -1,4 +1,4 @@
-import { DistributionWrapper } from "@/components/distribution-wrapper";
+import DistributionWrapper from "@/components/distribution-wrapper";
 import getAllUsers from "@/utils/getAllUsers";
 import stripUsers from "@/utils/strippUsers";
 
