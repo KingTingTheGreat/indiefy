@@ -3,7 +3,7 @@ import { PieChart } from "react-minimal-pie-chart";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
 
-function ProfileLink() {
+const ProfileLink = () => {
 	const { data: session } = useSession();
 	// @ts-ignore
 	const score = session?.score || 0;
@@ -17,6 +17,6 @@ function ProfileLink() {
 			<PieChart data={graphData} startAngle={270} lengthAngle={-360} />
 		</Link>
 	);
-}
+};
 
 export default ProfileLink;
