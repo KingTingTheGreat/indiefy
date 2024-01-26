@@ -13,7 +13,7 @@ const Team = [
 	},
 ];
 
-export const AboutInfo = () => {
+const AboutInfo = () => {
 	return (
 		<div className="flex flex-col items-center w-full">
 			<h1 className="text-4xl p-2 m-1">Meet the team!</h1>
@@ -43,3 +43,5 @@ export const AboutInfo = () => {
 		</div>
 	);
 };
+
+export default AboutInfo;

@@ -14,7 +14,7 @@ const ArtistDiv = ({ artists }: { artists: Artist[] }) => {
 	);
 };
 
-export const SongIcon = ({ song }: { song: Song }) => {
+const SongIcon = ({ song }: { song: Song }) => {
 	return (
 		<div className="flex flex-col flex-wrap max-w-30 items-center justify-center">
 			<p>Title: {song.name}</p>
@@ -24,3 +24,5 @@ export const SongIcon = ({ song }: { song: Song }) => {
 		</div>
 	);
 };
+
+export default SongIcon;

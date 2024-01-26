@@ -23,7 +23,7 @@ const LeaderboardRow = ({ rank, username, score }: { rank: number; username: str
 };
 
 // display the top 10 users with the most points and their scores
-export const Leaderboard = ({ users }: { users: User[] }) => {
+const Leaderboard = ({ users }: { users: User[] }) => {
 	// const [users, setUsers] = useState([]);
 
 	const topUsers = users
@@ -56,3 +56,5 @@ export const Leaderboard = ({ users }: { users: User[] }) => {
 		</div>
 	);
 };
+
+export default Leaderboard;

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Root } from "@/components/root";
+import Root from "@/components/root";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {

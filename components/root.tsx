@@ -1,12 +1,12 @@
 "use client";
 import { Inter } from "next/font/google";
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
 import { SessionProvider } from "next-auth/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const Root = ({ children }: { children: React.ReactNode }) => {
+const Root = ({ children }: { children: React.ReactNode }) => {
 	return (
 		<SessionProvider>
 			<html lang="en">
@@ -19,3 +19,5 @@ export const Root = ({ children }: { children: React.ReactNode }) => {
 		</SessionProvider>
 	);
 };
+
+export default Root;

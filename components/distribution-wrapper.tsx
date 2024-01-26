@@ -2,9 +2,9 @@
 import { useState } from "react";
 import { useSession } from "next-auth/react";
 import { User } from "@/types";
-import { BarChart } from "@/components/bar-chart";
+import BarChart from "@/components/bar-chart";
 
-export const DistributionWrapper = ({ users }: { users: User[] }) => {
+const DistributionWrapper = ({ users }: { users: User[] }) => {
 	const { data: session } = useSession();
 	// @ts-ignore
 	const score = session?.score || 0;
@@ -20,3 +20,5 @@ export const DistributionWrapper = ({ users }: { users: User[] }) => {
 		</main>
 	);
 };
+
+export default DistributionWrapper;

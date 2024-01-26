@@ -1,4 +1,4 @@
-import { HomeDisplay } from "@/components/home-display";
+import HomeDisplay from "@/components/home-display";
 
 export default async function Home() {
 	return (
