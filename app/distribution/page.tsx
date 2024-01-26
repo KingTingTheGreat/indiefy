@@ -1,6 +1,6 @@
 import DistributionWrapper from "@/components/distribution-wrapper";
 import getAllUsers from "@/utils/getAllUsers";
-import stripUsers from "@/utils/strippUsers";
+import stripUsers from "@/utils/stripUsers";
 
 export default async function Distribution() {
 	try {
