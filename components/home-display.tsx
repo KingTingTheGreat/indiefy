@@ -40,7 +40,7 @@ const HomeDisplay = () => {
 	}, [session]);
 
 	return (
-		<main className="flex flex-col min-h-screen w-[80%] flex-wrap items-center justify-between p-24">
+		<main className="flex flex-col min-h-screen w-full flex-wrap items-center justify-between p-24">
 			{songs && songs.length > 0 ? <TopSongs songs={songs} /> : <LoginButton />}
 		</main>
 	);
