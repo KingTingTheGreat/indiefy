@@ -13,6 +13,11 @@ export type User = {
 	score?: number;
 };
 
+export type CleanUser = {
+	username: string;
+	score: number;
+};
+
 export interface ResponseFuncs {
 	GET?: Function;
 	POST?: Function;

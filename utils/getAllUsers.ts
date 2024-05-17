@@ -1,8 +1,10 @@
-import { usersDBConnect } from "./connection";
+import getCollection from "./mgdb";
+
+const DB_COLLECTION = process.env.DB_COLLECTION;
 
 const getAllUsers = async () => {
-	const db = await usersDBConnect();
-	const users = await db.Users.find({});
+	const usersCollection = await getCollection(DB_COLLECTION as string);
+	const users = await usersCollection.find({}).toArray();
 	return users;
 };
 
