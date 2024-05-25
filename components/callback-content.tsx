@@ -1,10 +1,8 @@
 "use client";
 import { useSearchParams, redirect } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const CallbackContent = () => {
-	// const [redirectHome, setRedirectHome] = useState(false);
-
 	const searchParams = useSearchParams();
 	const code = searchParams.get("code");
 
