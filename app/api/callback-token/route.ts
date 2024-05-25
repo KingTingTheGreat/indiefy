@@ -1,6 +1,8 @@
 import { type NextRequest } from "next/server";
 import { setStore } from "@/store";
 
+const redirect_uri = process.env.PROD === "true" ? "https://indiefy.org/callback" : "http://localhost:3000/callback";
+
 export async function GET(request: NextRequest) {
 	console.log("callback-token");
 	const token = request.nextUrl.searchParams.get("token");
@@ -16,7 +18,7 @@ export async function GET(request: NextRequest) {
 		body: new URLSearchParams({
 			grant_type: "authorization_code",
 			code: token,
-			redirect_uri: "http://localhost:3000/callback",
+			redirect_uri: redirect_uri,
 			client_id: process.env.SPOTIFY_CLIENT_ID as string,
 			client_secret: process.env.SPOTIFY_CLIENT_SECRET as string,
 		}),
