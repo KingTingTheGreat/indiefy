@@ -25,7 +25,7 @@ export async function GET(request: NextRequest) {
 				body: new URLSearchParams({
 					grant_type: "authorization_code",
 					code: token,
-					redirect_uri: "http://localhost:3000/profile",
+					redirect_uri: "https://indiefy.org/profile",
 					client_id: process.env.SPOTIFY_CLIENT_ID as string,
 					client_secret: process.env.SPOTIFY_CLIENT_SECRET as string,
 				}),
