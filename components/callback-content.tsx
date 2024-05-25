@@ -17,6 +17,8 @@ const CallbackContent = () => {
 
 		redirect("/");
 	}, [code]);
+
+	return <div>loading...</div>;
 };
 
 export default CallbackContent;
