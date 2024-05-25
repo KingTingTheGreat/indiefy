@@ -7,6 +7,7 @@ export const setStore = (token: string, user: User): undefined => {
 };
 
 export const getStore = (token: string): User | null => {
+	console.log(store);
 	if (!store[token]) {
 		return null;
 	}

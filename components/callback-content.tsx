@@ -1,16 +1,24 @@
 "use client";
 import { useSearchParams, redirect } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const CallbackContent = () => {
+	// const [redirectHome, setRedirectHome] = useState(false);
+
 	const searchParams = useSearchParams();
 	const code = searchParams.get("code");
 
-	if (code) {
-		localStorage.setItem("indiefy-token", code);
-		redirect("/profile");
-	}
+	useEffect(() => {
+		if (code) {
+			localStorage.setItem("indiefy-token", code);
+			fetch(`/api/callback-token?token=${code}`);
+			redirect("/profile");
+		}
 
-	redirect("/");
+		redirect("/");
+	}, [code]);
+
+	return <div>loading...</div>;
 };
 
 export default CallbackContent;
