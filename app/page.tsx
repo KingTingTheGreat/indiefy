@@ -1,10 +1,14 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import LoginButton from "@/components/login-button";
 import { redirect } from "next/navigation";
 
 const Home = () => {
-	const [token, setToken] = useState<string | null>(localStorage.getItem("indiefy-token"));
+	const [token, setToken] = useState<string | null>(null);
+
+	useEffect(() => {
+		setToken(localStorage.getItem("indiefy-token"));
+	});
 
 	if (token && token !== "undefined") {
 		redirect("/profile");
