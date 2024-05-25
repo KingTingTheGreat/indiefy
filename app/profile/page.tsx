@@ -1,7 +1,12 @@
-export default function Profile() {
+import { Suspense } from "react";
+import ProfileContent from "@/components/profile-content";
+
+const Profile = () => {
 	return (
-		<div>
-			<p>your profile</p>
-		</div>
+		<Suspense fallback={<div>Loading...</div>}>
+			<ProfileContent />
+		</Suspense>
 	);
-}
+};
+
+export default Profile;

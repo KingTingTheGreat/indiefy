@@ -1,12 +1,23 @@
 "use client";
-import { signOut, useSession } from "next-auth/react";
+import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 const Footer = () => {
-	const { data: session } = useSession();
+	const router = useRouter();
 	return (
 		<footer className="flex flex-col justify-center items-center w-full h-[20%] bg-[#555]">
 			<p className="text-white text-2xl">Made with ❤️</p>
-			{session ? <button onClick={() => signOut()}>Sign out</button> : <></>}
+			{true ? (
+				<button
+					onClick={() => {
+						localStorage.removeItem("indiefy-token");
+						router.push("/");
+					}}>
+					Sign out
+				</button>
+			) : (
+				<></>
+			)}
 		</footer>
 	);
 };

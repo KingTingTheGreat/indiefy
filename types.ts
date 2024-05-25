@@ -1,5 +1,3 @@
-import { DefaultSession } from "next-auth";
-
 export type DBUser = {
 	username: string;
 	score: string;
@@ -10,7 +8,13 @@ export type User = {
 	email?: string | null;
 	username?: string;
 	accessToken?: string;
+	refreshToken?: string;
 	score?: number;
+};
+
+export type CleanUser = {
+	username: string;
+	score: number;
 };
 
 export interface ResponseFuncs {
@@ -21,12 +25,6 @@ export interface ResponseFuncs {
 }
 
 export type DataArray = [number, number, string];
-
-export interface Session extends Omit<DefaultSession, "user"> {
-	user?: User;
-	expires: string;
-	score: number;
-}
 
 export type Album = {
 	images: {
@@ -53,4 +51,13 @@ export type Song = {
 
 export type SpotifyResponse = {
 	items: Song[];
+};
+
+export type UserStore = {
+	[token: string]: User;
+};
+
+export type UserInfoResponse = {
+	songs: Song[];
+	score: number;
 };

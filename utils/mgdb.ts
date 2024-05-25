@@ -1,27 +1,30 @@
+import { MongoClient, Db, Collection } from "mongodb";
+
 const MONGO_URI = process.env.MONGO_URI;
-
-const { MongoClient, ServerApiVersion } = require("mongodb");
-const uri = MONGO_URI;
-
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
-const client = new MongoClient(uri, {
-	serverApi: {
-		version: ServerApiVersion.v1,
-		strict: true,
-		deprecationErrors: true,
-	},
-});
-
-async function run() {
-	try {
-		// Connect the client to the server	(optional starting in v4.7)
-		await client.connect();
-		// Send a ping to confirm a successful connection
-		await client.db("admin").command({ ping: 1 });
-		console.log("Pinged your deployment. You successfully connected to MongoDB!");
-	} finally {
-		// Ensures that the client will close when you finish/error
-		await client.close();
-	}
+if (!MONGO_URI) {
+	throw new Error("MONGO_URI environment variable is not defined");
 }
-run().catch(console.dir);
+const DB_NAME = process.env.DB_NAME;
+if (!DB_NAME) {
+	throw new Error("DB_NAME environment variable is not defined");
+}
+
+let client: MongoClient | null = null;
+let cachedDb: Db | null = null;
+
+const connect = async() => {
+	if (!client) {
+		client = new MongoClient(MONGO_URI);
+		await client.connect();
+	}
+	return client.db(DB_NAME);
+}
+
+const getCollection = async(collectionName: string): Promise<Collection> => {
+	if (!cachedDb) {
+		cachedDb = await connect();
+	}
+	return cachedDb.collection(collectionName);
+}
+
+export default getCollection;

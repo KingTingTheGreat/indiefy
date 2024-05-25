@@ -1,13 +1,10 @@
 "use client";
 import { PieChart } from "react-minimal-pie-chart";
 import Link from "next/link";
-import { useSession } from "next-auth/react";
 
 const ProfileLink = () => {
-	const { data: session } = useSession();
-	// @ts-ignore
-	const score = session?.score || 0;
-	const unused = 100 - score;
+	const score = 50;
+	const unused = 50;
 	const graphData = [
 		{ title: "Score", value: score, color: "#78cb5f" },
 		{ title: "Unused", value: unused, color: "#333333" },

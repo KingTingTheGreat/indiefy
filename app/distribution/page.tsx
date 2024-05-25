@@ -1,11 +1,11 @@
 import DistributionWrapper from "@/components/distribution-wrapper";
 import getAllUsers from "@/utils/getAllUsers";
-import stripUsers from "@/utils/stripUsers";
+import cleanUsers from "@/utils/clean-users";
 
 export default async function Distribution() {
 	try {
 		const users = await getAllUsers();
-		return <DistributionWrapper users={stripUsers(users)} />;
+		return <DistributionWrapper users={cleanUsers(users)} />;
 	} catch (error) {
 		console.error(error);
 		console.log("Failed to load user data");
