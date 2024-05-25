@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 const redirect_uri = process.env.PROD === "true" ? "https://indiefy.org/callback" : "http://localhost:3000/callback";
+console.log("login button redirect uri", redirect_uri);
 
 const LoginButton = () => {
 	return (
