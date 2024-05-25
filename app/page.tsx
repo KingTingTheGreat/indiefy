@@ -8,7 +8,7 @@ const Home = () => {
 
 	useEffect(() => {
 		setToken(localStorage.getItem("indiefy-token"));
-	});
+	}, []);
 
 	if (token && token !== "undefined") {
 		redirect("/profile");
