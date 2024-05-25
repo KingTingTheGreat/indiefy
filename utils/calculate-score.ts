@@ -5,7 +5,7 @@ const calculateScore = (songs: Song[]) => {
 		return acc + song.popularity;
 	}, 0);
 
-	return Math.floor(score / songs.length);
+	return 100 - Math.floor(score / songs.length);
 };
 
 export default calculateScore;
