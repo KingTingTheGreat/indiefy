@@ -68,6 +68,7 @@ export async function GET(req: NextRequest) {
   console.log('generating sessionId');
   const sessionId = generateSessionId(userCollection);
 
+  console.log('creating db user');
   const user = {
     sessionId,
     email,
@@ -77,6 +78,7 @@ export async function GET(req: NextRequest) {
     refresh_token,
   };
 
+  console.log('inserting/updating user');
   const dbRes = await userCollection.updateOne(
     { email },
     { $set: user },
@@ -87,5 +89,6 @@ export async function GET(req: NextRequest) {
     return new Response('Error', { status: 500 });
   }
 
+  console.log('returning');
   return NextResponse.json({ sessionId, name: display_name, profileImage });
 }
