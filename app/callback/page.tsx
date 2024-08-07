@@ -16,11 +16,10 @@ const CallbackPage = () => {
 				const res = await fetch(`/api/register-callback?code=${code}`);
 				console.log(res);
 				const data = await res.json();
-				const { sessionId, email, name, profileImage } = data;
+				const { sessionId, name, profileImage } = data;
 				userContext.save({
 					sessionId,
 					user: {
-						email,
 						name,
 						profileImage,
 					},
