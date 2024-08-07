@@ -13,7 +13,7 @@ const Footer = () => {
       {loggedIn ? (
         <button
           onClick={() => {
-            localStorage.removeItem('indiefy-token');
+            userContext.clear()
             router.push('/');
           }}
         >
