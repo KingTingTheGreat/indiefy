@@ -30,7 +30,7 @@ export default function AboutPage() {
         Check us out on GitHub!
       </Link>
       <div className="flex flex-row flex-wrap justify-center w-[80%]">
-        {team.map(function (member) {
+        {team.map((member) => {
           const { name, picture, bio } = member;
           return (
             <div
