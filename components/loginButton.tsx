@@ -14,25 +14,16 @@ const LoginButton = () => {
     fetchData();
   }, []);
 
-  return (
-    <>
-      {loginLink ? (
-        <Link
-          className="m-4 px-5 py-2 w-fit text-2xl rounded-2xl bg-customGreen"
-          href={loginLink}
-        >
-          Login with Spotify
-        </Link>
-      ) : (
-        <Link
-          className="m-4 px-5 py-2 w-fit text-2xl rounded-2xl bg-customGreen"
-          href={'/'}
-        >
-          Login with Spotify
-        </Link>
-      )}
-    </>
+  const LoginLink = (href: string) => (
+    <Link
+      className="m-4 px-5 py-2 w-fit text-2xl rounded-2xl bg-customGreen text-center"
+      href={href}
+    >
+      Login with Spotify
+    </Link>
   );
+
+  return LoginLink(loginLink || '/');
 };
 
 export default LoginButton;
