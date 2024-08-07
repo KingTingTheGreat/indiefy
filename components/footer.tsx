@@ -8,7 +8,7 @@ const Footer = () => {
   const { loggedIn } = userContext.state;
 
   return (
-    <footer className="flex flex-col justify-center items-center w-screen max-w-screen h-[5vh] bg-[#555]">
+    <footer className="flex flex-col justify-center items-center w-screen max-w-screen h-[5vh] bg-[#333]">
       <p className="text-white text-2xl">Made with ❤️</p>
       {loggedIn ? (
         <button
