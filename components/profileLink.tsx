@@ -10,7 +10,7 @@ const ProfileLink = () => {
   const unused = 100 - score;
   const graphData = [
     { title: 'Score', value: score, color: '#78cb5f' },
-    { title: 'Unused', value: unused, color: '#333333' },
+    { title: 'Unused', value: unused, color: '#222' },
   ];
   return (
     <Link href="/profile" className="m-1 w-10">
