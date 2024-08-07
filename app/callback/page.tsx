@@ -23,6 +23,7 @@ const CallbackPage = () => {
             name,
             profileImage,
           },
+          loggedIn: true,
         });
 
         router.push('/profile');
