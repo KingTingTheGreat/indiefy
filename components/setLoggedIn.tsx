@@ -23,11 +23,7 @@ const SetLoggedIn = ({ children }: { children: React.ReactNode }) => {
           loggedIn: true,
         });
       } else {
-        userContext.save({
-          loggedIn: false,
-          sessionId: '',
-          user: {},
-        });
+        userContext.clear();
       }
     };
     verifySession();

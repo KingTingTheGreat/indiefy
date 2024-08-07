@@ -19,7 +19,6 @@ const getCurrentState = (): UserContextState | null => {
 
 const defaultState: UserContextState = {
   sessionId: '',
-  csrfToken: '',
   user: {},
   loggedIn: false,
 };
@@ -56,8 +55,12 @@ export const UserContextProvider = ({
     }
   };
 
+  const clear = () => {
+    save({ sessionId: '', loggedIn: false, user: {} });
+  };
+
   return (
-    <UserContext.Provider value={{ state, set, save }}>
+    <UserContext.Provider value={{ state, set, save, clear }}>
       {children}
     </UserContext.Provider>
   );
@@ -75,11 +78,11 @@ export type UserContextType = {
   state: UserContextState;
   set: (newChanges: Partial<UserContextState>) => void;
   save: (state: Partial<UserContextState>) => void;
+  clear: () => void;
 };
 
 export type UserContextState = {
   sessionId: string;
-  csrfToken: string;
   user: User;
   loggedIn: boolean;
 };
