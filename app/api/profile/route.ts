@@ -10,17 +10,20 @@ import { NextRequest, NextResponse } from "next/server";
 export async function GET(req: NextRequest) {
 	const cookie = req.cookies.get(COOKIE_NAME);
 	if (!cookie) {
+		console.log("No cookie found");
 		return new Response("No cookie found", { status: 400 });
 	}
 
 	const { sessionId } = JSON.parse(cookie.value);
 	if (!sessionId) {
+		console.log("No session found");
 		return new Response("No session found", { status: 400 });
 	}
 
 	const userCollection = await getCollection(USERS_COLLECTION);
 	const userDocument = await userCollection.findOne({ sessionId });
 	if (!userDocument) {
+		console.log("No user found");
 		return new Response("No user found", { status: 400 });
 	}
 
@@ -41,7 +44,7 @@ export async function GET(req: NextRequest) {
 	}
 
 	const score = calculateScore(topSongs);
-	console.log(score);
+	console.log("score", score);
 
 	// update
 	const dbRes = await userCollection.updateOne({ sessionId }, { $set: { score } });
