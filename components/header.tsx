@@ -22,7 +22,7 @@ const Header = () => {
   };
 
   return (
-    <header className="flex flex-row max-sm:flex-col justify-between items-center w-screen max-w-screen bg-[#222222] h-[6vh]">
+    <header className="flex flex-row max-sm:flex-col justify-between items-center w-screen max-w-screen bg-[#222222] h-[6vh] max-sm:h-[13vh]">
       <Link href="/" className="font-superindie">
         <h2 className="text-6xl">Indiefy</h2>
       </Link>
