@@ -35,10 +35,10 @@ const LeaderboardRow = ({
           rank === 1
             ? '#d4af37'
             : rank === 2
-              ? '#c0c0c0'
-              : rank === 3
-                ? '#cd7f32'
-                : ''
+            ? '#c0c0c0'
+            : rank === 3
+            ? '#cd7f32'
+            : ''
         }
       >
         {rank}
@@ -51,7 +51,7 @@ const LeaderboardRow = ({
 
 const Leaderboard = ({ users }: { users: User[] }) => {
   return (
-    <div className="flex flex-col items-center p-1 m-2">
+    <div className="flex flex-col items-center p-1 m-2 w-96">
       <h2 className="text-4xl p-2 m-1">Leaderboard</h2>
       <table className="table-auto m-1">
         <thead>

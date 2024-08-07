@@ -14,9 +14,9 @@ export default function RankingsPage() {
     fetchTopTenUsers();
   }, []);
 
-  return topTenUsers ? (
-    <Leaderboard users={topTenUsers} />
-  ) : (
-    <Leaderboard users={[]} />
+  return (
+    <div className="flex justify-center">
+      <Leaderboard users={topTenUsers ?? []} />
+    </div>
   );
 }
