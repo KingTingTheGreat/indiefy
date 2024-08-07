@@ -10,7 +10,7 @@ const getCurrentState = (): UserContextState | null => {
     }
     return {
       ...storedState,
-      loggedIn: false,
+      // loggedIn: false,
     };
   } catch {
     return null;
