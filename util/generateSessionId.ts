@@ -3,10 +3,12 @@ import { Collection } from 'mongodb';
 
 const crypto = require('crypto');
 
-export const generateSessionId = (collection: Collection): string => {
+export const generateSessionId = async (
+  collection: Collection
+): Promise<string> => {
   while (true) {
     const sessionId = crypto.randomBytes(SESSION_ID_LENGTH).toString('hex');
-    const existing = collection.findOne({ sessionId });
+    const existing = await collection.findOne({ sessionId });
     if (!existing) return sessionId;
   }
 };

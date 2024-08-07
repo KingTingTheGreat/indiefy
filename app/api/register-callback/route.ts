@@ -66,7 +66,7 @@ export async function GET(req: NextRequest) {
   console.log('awaiting user collection');
   const userCollection = await getCollection(USERS_COLLECTION);
   console.log('generating sessionId');
-  const sessionId = generateSessionId(userCollection);
+  const sessionId = await generateSessionId(userCollection);
 
   console.log('creating db user');
   const user = {
