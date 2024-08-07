@@ -23,7 +23,7 @@ const SetLoggedIn = ({ children }: { children: React.ReactNode }) => {
       }
     };
     verifySession();
-  }, []);
+  });
 
   return <>{children}</>;
 };
