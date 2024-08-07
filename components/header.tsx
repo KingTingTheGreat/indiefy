@@ -17,7 +17,7 @@ const Header = () => {
     return (
       <Link
         href={path}
-        className="m-1 p-2 rounded hover:bg-[#222] hover:text-customGreen max-sm:p-1 transition-all"
+        className="m-1 p-2 text-lg max-sm:text-md rounded hover:bg-[#222] hover:text-customGreen max-sm:p-1 transition-all"
       >
         {children}
       </Link>
