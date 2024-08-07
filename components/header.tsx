@@ -15,14 +15,17 @@ const Header = () => {
     path: string;
   }) => {
     return (
-      <Link href={path} className="m-1 p-2 rounded bg-nullGray max-sm:p-1">
+      <Link
+        href={path}
+        className="m-1 p-2 rounded hover:bg-[#222] hover:text-customGreen max-sm:p-1 transition-all"
+      >
         {children}
       </Link>
     );
   };
 
   return (
-    <header className="flex flex-row max-sm:flex-col justify-between max-sm:justify-around items-center w-screen max-w-screen bg-[#333] h-[6vh] max-sm:h-[15vh]">
+    <header className="flex flex-row max-sm:flex-col justify-between max-sm:justify-around items-center w-screen max-w-screen bg-nullGray h-[6vh] max-sm:h-[15vh]">
       <Link href="/" className="font-superindie">
         <h2 className="text-6xl">Indiefy</h2>
       </Link>
