@@ -26,7 +26,7 @@ const Header = () => {
 
   return (
     <header className="flex flex-row max-sm:flex-col justify-between max-sm:justify-around items-center w-screen max-w-screen bg-nullGray h-[6vh] max-sm:h-[15vh]">
-      <Link href="/" className="font-superindie">
+      <Link href="/" className="font-superindie hover:text-customGreen">
         <h2 className="text-6xl">Indiefy</h2>
       </Link>
       <nav className="flex justify-between items-center">
