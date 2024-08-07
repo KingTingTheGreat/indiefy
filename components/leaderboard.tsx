@@ -35,10 +35,10 @@ const LeaderboardRow = ({
           rank === 1
             ? '#d4af37'
             : rank === 2
-            ? '#c0c0c0'
-            : rank === 3
-            ? '#cd7f32'
-            : ''
+              ? '#c0c0c0'
+              : rank === 3
+                ? '#cd7f32'
+                : ''
         }
       >
         {rank}
