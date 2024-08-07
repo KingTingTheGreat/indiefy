@@ -29,16 +29,16 @@ export default function AboutPage() {
       >
         Check us out on GitHub!
       </Link>
-      <div className="flex flex-row flex-wrap justify-center w-[80%]">
+      <div className="flex flex-row flex-wrap justify-center w-[80%] m-4 max-sm:w-full">
         {team.map((member) => {
           const { name, picture, bio } = member;
           return (
             <div
               key={name}
-              className="flex flex-col items-center w-52 m-5 rounded-3xl p-5 bg-nullGray"
+              className="flex flex-col items-center w-52 m-2 rounded-3xl p-2 bg-nullGray"
             >
-              <h2 className="text-2xl m-0 p-2">{name}</h2>
-              <p className="m-0 pt-2 pb-0 text-center">{bio}</p>
+              <h2 className="text-2xl max-sm:text-xl">{name}</h2>
+              <p className="text-md max-sm:text-sm pt-2 text-center">{bio}</p>
             </div>
           );
         })}
