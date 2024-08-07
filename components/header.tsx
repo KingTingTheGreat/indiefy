@@ -27,7 +27,7 @@ const Header = () => {
         <h2 className="text-6xl">Indiefy</h2>
       </Link>
       <nav className="flex justify-between items-center">
-        {loggedIn ? <ProfileLink /> : <NavLink path="/login">Login</NavLink>}
+        {loggedIn && <ProfileLink />}
         <NavLink path="/rankings">Rankings</NavLink>
         <NavLink path="/distribution">Distribution</NavLink>
         <NavLink path="/about">About</NavLink>
