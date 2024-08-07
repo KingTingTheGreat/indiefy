@@ -8,8 +8,7 @@ const Footer = () => {
   const { loggedIn } = userContext.state;
 
   return (
-    <footer className="flex flex-col justify-center items-center w-screen max-w-screen h-[5vh] bg-nullGray">
-      <p className="text-white text-2xl">Made with ❤️</p>
+    <footer className="flex flex-col justify-center items-center w-screen max-w-screen h-[5vh] bg-nullGray text-2xl">
       {loggedIn ? (
         <button
           onClick={() => {
@@ -20,7 +19,7 @@ const Footer = () => {
           Sign out
         </button>
       ) : (
-        <></>
+        <p>Made with ❤️</p>
       )}
     </footer>
   );
