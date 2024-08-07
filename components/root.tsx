@@ -16,7 +16,7 @@ const Root = ({ children }: { children: React.ReactNode }) => {
           <body className={inter.className}>
             <Suspense fallback={<div>Loading...</div>}>
               <Header />
-              {children}
+              <main className="min-h-[70%]">{children}</main>
               <Footer />
             </Suspense>
           </body>
