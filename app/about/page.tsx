@@ -24,7 +24,7 @@ export default function AboutPage() {
       </p>
       <Link
         href="https://github.com/KingTingTheGreat/indiefy"
-        className="hover:text-yellow m-1 p-1 rounded-lg text-lg text-[#999999] bg-[#573457]"
+        className="hover:text-yellow m-2 p-2 rounded-lg max-sm:text-lg text-xl underline hover:text-customGreen transition-all"
         target="_blank"
       >
         Check us out on GitHub!
@@ -35,9 +35,11 @@ export default function AboutPage() {
           return (
             <div
               key={name}
-              className="flex flex-col items-center w-52 m-2 rounded-3xl p-2 bg-nullGray"
+              className="flex flex-col items-center w-60 max-sm:w-52 m-6 max-sm:m-2 rounded-3xl p-4 max-sm:p-2 bg-nullGray"
             >
-              <h2 className="text-2xl max-sm:text-xl">{name}</h2>
+              <h2 className="text-2xl max-sm:text-xl text-customGreen">
+                {name}
+              </h2>
               <p className="text-md max-sm:text-sm pt-2 text-center">{bio}</p>
             </div>
           );
