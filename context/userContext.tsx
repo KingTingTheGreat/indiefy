@@ -40,7 +40,7 @@ export const UserContextProvider = ({ children }: { children: React.ReactNode })
 	const save = (newChanges: Partial<UserContextState>) => {
 		// could also use cookies
 		try {
-			console.log("saving");
+			console.log("saving", newChanges);
 			const newState = {
 				...state,
 				...newChanges,
