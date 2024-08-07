@@ -16,6 +16,7 @@ export async function GET(req: NextRequest) {
     return new Response('No code provided.', { status: 400 });
   }
 
+  console.log('getting access_token from spotify');
   const accessRes = await fetch('https://accounts.spotify.com/api/token', {
     method: 'POST',
     headers: {
@@ -34,11 +35,13 @@ export async function GET(req: NextRequest) {
     return new Response('Error', { status: 500 });
   }
 
+  console.log('reading access_token json');
   const data = await accessRes.json();
   console.log(data);
 
   const { access_token, refresh_token } = data;
 
+  console.log('getting user profile from spotify');
   const profileRes = await fetch('https://api.spotify.com/v1/me', {
     headers: {
       Authorization: `Bearer ${access_token}`,
@@ -49,6 +52,7 @@ export async function GET(req: NextRequest) {
     return new Response('Error', { status: 500 });
   }
 
+  console.log('reading profile data json');
   const profileData = await profileRes.json();
   console.log(profileData);
   const { display_name, email } = profileData;
@@ -59,7 +63,9 @@ export async function GET(req: NextRequest) {
     return new Response('Error', { status: 500 });
   }
 
+  console.log('awaiting user collection');
   const userCollection = await getCollection(USERS_COLLECTION);
+  console.log('generating sessionId');
   const sessionId = generateSessionId(userCollection);
 
   const user = {
