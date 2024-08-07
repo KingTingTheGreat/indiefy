@@ -3,21 +3,25 @@
 @tailwind utilities;
 
 @font-face {
-	font-family: "superindie";
-	src: url("../public/fonts/SuperIndie.ttf");
+  font-family: 'superindie';
+  src: url('../public/fonts/SuperIndie.ttf');
 }
 
 :root {
-	--foreground-rgb: 255, 255, 255;
-	--background-start-rgb: 13, 13, 13;
-	--background-end-rgb: 40, 40, 40;
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 13, 13, 13;
+  --background-end-rgb: 40, 40, 40;
 }
 
 body {
-	color: rgb(var(--foreground-rgb));
-	background: linear-gradient(to bottom right, transparent, rgb(var(--background-end-rgb)))
-		rgb(var(--background-start-rgb));
-	min-width: 100vw;
-	min-height: 100vh;
-	max-width: 100vw;
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom right,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  min-width: 100vw;
+  min-height: 100vh;
+  max-width: 100vw;
 }

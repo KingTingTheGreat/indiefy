@@ -1,29 +1,29 @@
-"use client";
-import LoginButton from "@/components/loginButton";
-import { useUserContext } from "@/context/userContext";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+'use client';
+import LoginButton from '@/components/loginButton';
+import { useUserContext } from '@/context/userContext';
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
 const HomePage = () => {
-	const userContext = useUserContext();
-	const router = useRouter();
+  const userContext = useUserContext();
+  const router = useRouter();
 
-	useEffect(() => {
-		if (userContext.state.loggedIn) {
-			router.push("/profile");
-		}
-	});
+  useEffect(() => {
+    if (userContext.state.loggedIn) {
+      router.push('/profile');
+    }
+  });
 
-	return (
-		<main className="w-full">
-			<div className="flex flex-col w-full items-center justify-between">
-				<h2 className="m-5 text-6xl text-center">Find your rank</h2>
-				<div className="flex flex-col min-h-screen w-full flex-wrap items-center justify-between p-24">
-					<LoginButton />
-				</div>
-			</div>
-		</main>
-	);
+  return (
+    <main className="w-full">
+      <div className="flex flex-col w-full items-center justify-between">
+        <h2 className="m-5 text-6xl text-center">Find your rank</h2>
+        <div className="flex flex-col min-h-screen w-full flex-wrap items-center justify-between p-24">
+          <LoginButton />
+        </div>
+      </div>
+    </main>
+  );
 };
 
 export default HomePage;
