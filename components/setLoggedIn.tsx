@@ -8,7 +8,7 @@ const SetLoggedIn = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     if (!userContext.state.sessionId) {
-      userContext.clear()
+      userContext.clear();
       return;
     }
     const verifySession = async () => {
@@ -23,7 +23,7 @@ const SetLoggedIn = ({ children }: { children: React.ReactNode }) => {
       }
     };
     verifySession();
-  }, [userContext.state.sessionId]);
+  }, []);
 
   return <>{children}</>;
 };
