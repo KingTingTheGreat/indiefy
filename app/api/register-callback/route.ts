@@ -59,7 +59,8 @@ export async function GET(req: NextRequest) {
     return new Response('Error', { status: 500 });
   }
 
-  const sessionId = generateSessionId();
+  const userCollection = await getCollection(USERS_COLLECTION);
+  const sessionId = generateSessionId(userCollection);
 
   const user = {
     sessionId,
@@ -70,7 +71,6 @@ export async function GET(req: NextRequest) {
     refresh_token,
   };
 
-  const userCollection = await getCollection(USERS_COLLECTION);
   const dbRes = await userCollection.updateOne(
     { email },
     { $set: user },
