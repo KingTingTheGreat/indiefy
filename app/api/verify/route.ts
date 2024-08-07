@@ -30,5 +30,6 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ message: FAILURE_MESSAGE });
   }
 
+  console.log('verified');
   return NextResponse.json({ message: SUCCESS_MESSAGE });
 }
