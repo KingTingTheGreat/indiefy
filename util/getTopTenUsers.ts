@@ -10,12 +10,13 @@ const getTopTenUsers = async (): Promise<User[]> => {
     .sort({ score: -1 })
     .limit(10)
     .toArray();
-  console.log(users);
-  return users.map((user) => ({
+  const cleanUsers = users.map((user) => ({
     name: user.name,
     profileImage: user.profileImage,
     score: user.score,
   }));
+  console.log('top 10 clean users', cleanUsers);
+  return cleanUsers;
 };
 
 export default getTopTenUsers;
